@@ -270,7 +270,7 @@ a:hover::after {
     margin-bottom: 15px;
 }
 
-.card p strong {
+.card p  {
     color: var(--text-dark);
     font-size: 1.1rem;
     display: block;
