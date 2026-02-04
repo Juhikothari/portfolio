@@ -31,6 +31,137 @@ body {
     color: var(--text-white);
     line-height: 1.7;
     overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ================= LIGHT MODE ================= */
+body.light-mode {
+    --dark-bg: #f5f7fa;
+    --dark-card: #ffffff;
+    --text-white: #1a1a2e;
+    --text-gray: #4a4a5e;
+    --text-muted: #6b6b7b;
+    --border-color: #e0e0e8;
+}
+
+body.theme-transitioning,
+body.theme-transitioning * {
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease !important;
+}
+
+/* ================= THEME TOGGLE BUTTON ================= */
+.theme-toggle {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    background: var(--dark-card);
+    border: 2px solid var(--border-color);
+    color: var(--text-white);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1) rotate(15deg);
+    border-color: var(--primary-pink);
+    box-shadow: 0 6px 20px rgba(255, 107, 157, 0.3);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+/* ================= SCROLL TO TOP BUTTON ================= */
+.scroll-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-pink), var(--primary-orange));
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+}
+
+.scroll-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-to-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(255, 107, 157, 0.4);
+}
+
+/* ================= SCROLL ANIMATIONS ================= */
+.fade-out {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+/* ================= RIPPLE EFFECT ================= */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 107, 157, 0.4);
+    transform: scale(0);
+    animation: ripple-animation 0.6s ease-out;
+    pointer-events: none;
+}
+
+@keyframes ripple-animation {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Add position relative to ripple containers */
+.cta-button,
+.project-card,
+.contact-card {
+    position: relative;
+    overflow: hidden;
+}
+
+/* ================= CONTACT CARD CLICK ANIMATION ================= */
+.contact-card.clicked {
+    animation: click-pulse 0.3s ease;
+}
+
+@keyframes click-pulse {
+    0%, 100% {
+        transform: translateX(0) scale(1);
+    }
+    50% {
+        transform: translateX(10px) scale(0.98);
+    }
 }
 
 /* ================= HERO SECTION ================= */
@@ -640,6 +771,22 @@ footer p {
 @media (max-width: 640px) {
     .container {
         padding: 20px;
+    }
+    
+    .theme-toggle {
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .scroll-to-top {
+        bottom: 20px;
+        right: 20px;
+        width: 45px;
+        height: 45px;
+        font-size: 1.3rem;
     }
     
     .hero {
