@@ -280,8 +280,6 @@ This project is open source and available under the [MIT License](LICENSE).
 
 **⭐ If you like this project, please give it a star! ⭐**
 
-Made with ❤️ by Juhi Kothari
-
 [View Live Demo](#) | [Report Bug](https://github.com/Juhikothari/portfolio/issues) | [Request Feature](https://github.com/Juhikothari/portfolio/issues)
 
 </div>
