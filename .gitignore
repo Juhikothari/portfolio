@@ -1,0 +1,54 @@
+# Operating System Files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor Files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+.classpath
+
+# Temporary Files
+*.log
+*.tmp
+*.temp
+*.cache
+
+# Build Files
+dist/
+build/
+*.min.js
+*.min.css
+
+# Dependencies (if using package managers)
+node_modules/
+package-lock.json
+yarn.lock
+
+# Environment Variables
+.env
+.env.local
+.env.*.local
+
+# Backup Files
+*.bak
+*.backup
+*~
+
+# Image Originals (keep optimized versions only)
+images/originals/
+images/*.psd
+images/*.ai
+
+# Documentation Drafts
+docs/drafts/
+*.draft.md
